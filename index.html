@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Astro Rey Florería - El Jardín del Alma</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background-color: #fffbf5;
+        font-family: "Lato", sans-serif;
+        color: #3d3d3d;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      .font-fancy {
+        font-family: "Cormorant Garamond", serif;
+      }
+      .hero-bg {
+        background-image: url("https://images.unsplash.com/photo-1599666245842-896a3a415a77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
+      }
+      .fade-in-section {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+      .fade-in-section.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .gallery-menu-item.active {
+        background-color: #fdefe5;
+        color: #c58c5d;
+      }
+    </style>
+  </head>
+  <body class="antialiased">
+    <!-- Header / Navigation -->
+    <header
+      id="header"
+      class="bg-[#FFFBF5]/80 backdrop-blur-md sticky top-0 z-50 transition-all duration-300"
+    >
+      <div
+        class="container mx-auto px-6 py-3 flex justify-between items-center"
+      >
+        <a href="#" class="flex items-center space-x-2">
+          <img
+            src="./assets/logo.png"
+            alt="Logo Astro Rey"
+            class="h-12 w-auto"
+          />
+        </a>
+        <nav class="hidden md:flex items-center space-x-8">
+          <a
+            href="#porque-nosotros"
+            class="hover:text-[#C58C5D] transition-colors"
+            >Nosotros</a
+          >
+          <a href="#proceso" class="hover:text-[#C58C5D] transition-colors"
+            >Proceso</a
+          >
+          <a href="#colecciones" class="hover:text-[#C58C5D] transition-colors"
+            >Colecciones</a
+          >
+          <a
+            href="#contacto-form"
+            class="hover:text-[#C58C5D] transition-colors"
+            >Contacto</a
+          >
+        </nav>
+        <button id="mobile-menu-button" class="md:hidden text-3xl">☰</button>
+      </div>
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-[#FFFBF5] px-6 pb-4">
+        <a href="#porque-nosotros" class="block py-2 hover:text-[#C58C5D]"
+          >Nosotros</a
+        >
+        <a href="#proceso" class="block py-2 hover:text-[#C58C5D]">Proceso</a>
+        <a href="#colecciones" class="block py-2 hover:text-[#C58C5D]"
+          >Colecciones</a
+        >
+        <a href="#contacto" class="block py-2 hover:text-[#C58C5D]">Contacto</a>
+      </div>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section
+        class="hero-bg bg-cover bg-center h-screen flex items-center justify-center text-white relative bg-[url('./assets/portada.jpg')]"
+      >
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="relative z-10 text-center px-4">
+          <h1 class="text-6xl md:text-8xl font-bold tracking-tight">
+            El Jardín del Alma
+          </h1>
+          <p class="mt-4 text-xl md:text-2xl max-w-2xl mx-auto font-light">
+            🌸 Conecta con la Belleza que Nace del Corazón: Gerberas y Flores
+            Mexicanas para Iluminar Tu Vida.
+          </p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="#colecciones"
+              class="bg-[#C58C5D] text-white py-3 px-8 rounded-full hover:bg-opacity-90 transition-all text-lg"
+              >Explora Colecciones</a
+            >
+            <a
+              href="#contacto"
+              class="bg-transparent border-2 border-white text-white py-3 px-8 rounded-full hover:bg-white hover:text-[#3D3D3D] transition-all text-lg"
+              >Agenda una Asesoría</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- Por Qué Elegirnos Section -->
+      <section id="porque-nosotros" class="py-20 lg:py-28 fade-in-section">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-4xl md:text-5xl font-bold text-[#5E7A60]">
+            ¿Por Qué Elegir Astro Rey?
+          </h2>
+          <p class="mt-4 max-w-3xl mx-auto text-lg">
+            Más que flores, una experiencia de alma. Una empresa mexicana con
+            una visión arraigada en el amor, la comunidad y la espiritualidad.
+          </p>
+          <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div class="text-center">
+              <span class="text-5xl text-[#C58C5D]">✨</span>
+              <h3 class="text-2xl font-semibold mt-4">Flores con Alma</h3>
+              <p class="mt-2 text-gray-600">
+                Cada flor es un reflejo de nuestra dedicación a la Tierra y a
+                las conexiones humanas.
+              </p>
+            </div>
+            <div class="text-center">
+              <span class="text-5xl text-[#C58C5D]">🌿</span>
+              <h3 class="text-2xl font-semibold mt-4">Diseños Únicos</h3>
+              <p class="mt-2 text-gray-600">
+                Creaciones personalizadas que hablan por ti y capturan tus
+                emociones en cada pétalo.
+              </p>
+            </div>
+            <div class="text-center">
+              <span class="text-5xl text-[#C58C5D]">⚘</span>
+              <h3 class="text-2xl font-semibold mt-4">Orgullo Mexicano</h3>
+              <p class="mt-2 text-gray-600">
+                Celebramos la riqueza de nuestra tierra con gerberas y flores
+                endémicas de México.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Proceso Section -->
+      <section id="proceso" class="py-20 lg:py-28 bg-[#FDEFE5] fade-in-section">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-4xl md:text-5xl font-bold text-[#5E7A60]">
+            Tu Viaje Floral en 3 Simples Pasos
+          </h2>
+          <p class="mt-4 max-w-3xl mx-auto text-lg">
+            Hemos diseñado un proceso simple y claro para que encontrar tus
+            flores sea una delicia, no una tarea.
+          </p>
+          <div
+            class="mt-16 flex flex-col md:flex-row items-center justify-center gap-8 md:gap-0"
+          >
+            <div class="flex flex-col items-center text-center max-w-xs">
+              <div
+                class="bg-[#C58C5D] text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold"
+              >
+                1
+              </div>
+              <h3 class="text-2xl font-semibold mt-4">Explora</h3>
+              <p class="mt-2 text-gray-600">
+                Sumérgete en nuestro jardín digital de inspiración, lleno de
+                color y vida.
+              </p>
+            </div>
+            <div
+              class="hidden md:block border-t-2 border-dashed border-[#C58C5D] w-32 mx-4"
+            ></div>
+            <div
+              class="md:hidden border-l-2 border-dashed border-[#C58C5D] h-16 my-4"
+            ></div>
+            <div class="flex flex-col items-center text-center max-w-xs">
+              <div
+                class="bg-[#C58C5D] text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold"
+              >
+                2
+              </div>
+              <h3 class="text-2xl font-semibold mt-4">Personaliza</h3>
+              <p class="mt-2 text-gray-600">
+                Elige un arreglo existente o déjate guiar por nuestros expertos
+                para una creación única.
+              </p>
+            </div>
+            <div
+              class="hidden md:block border-t-2 border-dashed border-[#C58C5D] w-32 mx-4"
+            ></div>
+            <div
+              class="md:hidden border-l-2 border-dashed border-[#C58C5D] h-16 my-4"
+            ></div>
+            <div class="flex flex-col items-center text-center max-w-xs">
+              <div
+                class="bg-[#C58C5D] text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold"
+              >
+                3
+              </div>
+              <h3 class="text-2xl font-semibold mt-4">Concreta</h3>
+              <p class="mt-2 text-gray-600">
+                Agenda una cita o realiza tu compra. Concretamos la magia floral
+                para ti.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Elige Tu Experiencia Section -->
+      <section id="experiencia" class="py-20 lg:py-28 fade-in-section">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-[#5E7A60]">
+              Elige Tu Experiencia Floral
+            </h2>
+            <p class="mt-4 max-w-3xl mx-auto text-lg">
+              Ya sea que busques un detalle rápido o un diseño completamente a
+              medida, tenemos un camino para ti.
+            </p>
+          </div>
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+            <div
+              class="bg-[#FDEFE5] rounded-lg p-8 flex flex-col items-center text-center"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1546842931-886c185b4c8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80"
+                alt="Flores para compra directa"
+                class="w-full h-64 object-cover rounded-md mb-6"
+              />
+              <h3 class="text-3xl font-semibold">Compra Directa</h3>
+              <p class="mt-2 flex-grow">
+                Explora nuestras colecciones curadas y elige el arreglo perfecto
+                que resuene contigo. La belleza, a un clic de distancia.
+              </p>
+              <a
+                href="#colecciones"
+                class="mt-6 bg-[#C58C5D] text-white py-2 px-6 rounded-full hover:bg-opacity-90 transition-all"
+                >Ver Colecciones</a
+              >
+            </div>
+            <div
+              class="bg-[#EAF2EB] rounded-lg p-8 flex flex-col items-center text-center"
+            >
+              <img
+                src="./assets/personalizado.jpeg"
+                alt="Asesoría para diseño personalizado"
+                class="w-full h-64 object-cover rounded-md mb-6"
+              />
+              <h3 class="text-3xl font-semibold">Diseño Personalizado</h3>
+              <p class="mt-2 flex-grow">
+                Para eventos, regalos especiales o simplemente un sueño floral.
+                Hablemos y creemos algo único juntos.
+              </p>
+              <a
+                href="#contacto-form"
+                class="mt-6 bg-[#5E7A60] text-white py-2 px-6 rounded-full hover:bg-opacity-90 transition-all"
+                >Solicitar Asesoría</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Colecciones Section -->
+      <section id="colecciones" class="py-20 lg:py-28 fade-in-section">
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-[#5E7A60]">
+              Descubre Nuestras Colecciones
+            </h2>
+            <p class="mt-4 max-w-3xl mx-auto text-lg">
+              Cada colección es una historia contada a través de flores, colores
+              y texturas.
+            </p>
+          </div>
+          <div class="flex flex-col md:flex-row gap-8 md:gap-12">
+            <div class="md:w-1/3 lg:w-1/4">
+              <ul id="gallery-menu" class="space-y-2"></ul>
+            </div>
+            <div class="md:w-2/3 lg:w-3/4">
+              <div class="bg-white p-4 rounded-lg shadow-lg">
+                <img
+                  id="gallery-image"
+                  src="./assets/gerberas.jpeg"
+                  alt="Colección de flores"
+                  class="w-full h-96 object-cover rounded-md transition-all duration-300"
+                />
+                <h3 id="gallery-title" class="text-3xl font-semibold mt-6"></h3>
+                <p id="gallery-description" class="mt-2 text-gray-600"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Formulario de Contacto Section -->
+      <section
+        id="contacto-form"
+        class="py-20 lg:py-28 bg-[#FDEFE5] fade-in-section"
+      >
+        <div class="container mx-auto px-6">
+          <div class="text-center mb-12">
+            <h2 class="text-4xl md:text-5xl font-bold text-[#5E7A60]">
+              Contáctanos
+            </h2>
+            <p class="mt-4 max-w-3xl mx-auto text-lg">
+              Estamos aquí para responder tus preguntas y ayudarte a crear
+              momentos florales inolvidables.
+            </p>
+          </div>
+          <div class="max-w-2xl mx-auto">
+            <form
+              action="https://formspree.io/f/xvgqepkn"
+              method="POST"
+              class="bg-white rounded-lg shadow-lg p-8"
+            >
+              <div class="mb-6">
+                <label
+                  class="block text-gray-700 font-semibold mb-2"
+                  for="email"
+                >
+                  Tu correo electrónico:
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  class="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#C58C5D]"
+                  required
+                />
+              </div>
+              <div class="mb-6">
+                <label
+                  class="block text-gray-700 font-semibold mb-2"
+                  for="nombre"
+                >
+                  Tu nombre:
+                </label>
+                <input
+                  type="text"
+                  name="nombre"
+                  id="nombre"
+                  class="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#C58C5D]"
+                  required
+                />
+              </div>
+              <div class="mb-6">
+                <label
+                  class="block text-gray-700 font-semibold mb-2"
+                  for="message"
+                >
+                  Tu mensaje:
+                </label>
+                <textarea
+                  name="message"
+                  id="message"
+                  rows="5"
+                  class="w-full px-4 py-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#C58C5D]"
+                  required
+                ></textarea>
+              </div>
+              <div class="text-center">
+                <button
+                  type="submit"
+                  class="bg-[#C58C5D] text-white py-3 px-8 rounded-full hover:bg-opacity-90 transition-all text-lg"
+                >
+                  Enviar Mensaje
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contacto" class="bg-[#5E7A60] text-white fade-in-section">
+      <div class="container mx-auto px-6 py-16">
+        <div
+          class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left"
+        >
+          <div class="md:col-span-1 flex flex-col items-center md:items-start">
+            <img
+              src="./assets/logo.png"
+              alt="Logo Astro Rey"
+              class="h-12 w-auto"
+            />
+            <p class="mt-4 text-gray-300">
+              Cultivando amor, comunidad y belleza en cada interacción.
+            </p>
+            <p class="mt-4 text-sm text-gray-400">Astro Rey Florería © 2025</p>
+          </div>
+          <div>
+            <h4 class="text-xl font-semibold font-fancy tracking-wider">
+              Contacto
+            </h4>
+            <ul class="mt-4 space-y-2 text-gray-300">
+              <li>Calle del Sol 123, Col. Jardín</li>
+              <li>Uruapan, Michoacán, México</li>
+              <li>+52 55 1234 5678</li>
+              <li>info@astrorey.mx</li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="text-xl font-semibold font-fancy tracking-wider">
+              Horario
+            </h4>
+            <ul class="mt-4 space-y-2 text-gray-300">
+              <li>Lunes a Viernes: 9:00 - 18:00</li>
+              <li>Sábados: 10:00 - 14:00</li>
+              <li
+                class="pt-4 flex justify-center md:justify-start space-x-4 text-2xl"
+              >
+                <a href="#" class="hover:text-[#C58C5D] transition-colors"
+                  >FB</a
+                >
+                <a href="#" class="hover:text-[#C58C5D] transition-colors"
+                  >IG</a
+                >
+                <a href="#" class="hover:text-[#C58C5D] transition-colors"
+                  >PN</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById("mobile-menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+        mobileMenuButton.addEventListener("click", () => {
+          mobileMenu.classList.toggle("hidden");
+        });
+
+        // Interactive Gallery
+        const collections = [
+          {
+            name: "Gerberas Radiantes",
+            title: "Colección de Gerberas Radiantes",
+            description:
+              "La alegría y el color vibrante de las gerberas capturados en arreglos que irradian energía positiva. Perfectas para levantar el ánimo y celebrar la vida.",
+            imageUrl: "./assets/gerberas.jpeg",
+          },
+          {
+            name: "Tesoros de México",
+            title: "Colección Tesoros de México",
+            description:
+              "Un homenaje a nuestra tierra. Arreglos con dalias, cempasúchil y otras flores endémicas que cuentan la historia y la riqueza de México.",
+            imageUrl: "./assets/tesoros.jpeg",
+          },
+          {
+            name: "Ecos del Bosque",
+            title: "Colección Ecos del Bosque",
+            description:
+              "Diseños que evocan la serenidad de la naturaleza, con tonos verdes, texturas de hojas, y flores silvestres para un toque rústico y elegante.",
+            imageUrl:
+              "https://images.unsplash.com/photo-1533616688484-4b4a69317578?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80",
+          },
+          {
+            name: "Sueños Pastel",
+            title: "Colección Sueños Pastel",
+            description:
+              "La delicadeza y el romance se materializan en arreglos de tonos suaves. Rosas, lisianthus y nubes de gypsophila para los momentos más tiernos.",
+            imageUrl:
+              "https://images.unsplash.com/photo-1587315181363-c6b75a40735b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+          },
+        ];
+
+        const galleryMenu = document.getElementById("gallery-menu");
+        const galleryImage = document.getElementById("gallery-image");
+        const galleryTitle = document.getElementById("gallery-title");
+        const galleryDescription = document.getElementById(
+          "gallery-description",
+        );
+
+        function updateGallery(index) {
+          const collection = collections[index];
+          galleryImage.src = collection.imageUrl;
+          galleryTitle.textContent = collection.title;
+          galleryDescription.textContent = collection.description;
+
+          document.querySelectorAll(".gallery-menu-item").forEach((item, i) => {
+            if (i === index) {
+              item.classList.add("active");
+            } else {
+              item.classList.remove("active");
+            }
+          });
+        }
+
+        collections.forEach((collection, index) => {
+          const li = document.createElement("li");
+          li.innerHTML = `<button class="gallery-menu-item w-full text-left p-4 rounded-lg font-fancy text-xl hover:bg-[#FDEFE5] transition-colors">${collection.name}</button>`;
+          li.querySelector("button").addEventListener("click", () =>
+            updateGallery(index),
+          );
+          galleryMenu.appendChild(li);
+        });
+
+        if (collections.length > 0) {
+          updateGallery(0);
+        }
+
+        // Scroll-triggered fade-in animation
+        const sections = document.querySelectorAll(".fade-in-section");
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+              }
+            });
+          },
+          {
+            threshold: 0.1,
+          },
+        );
+
+        sections.forEach((section) => {
+          observer.observe(section);
+        });
+      });
+    </script>
+  </body>
+</html>
